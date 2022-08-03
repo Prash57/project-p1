@@ -1,0 +1,62 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .contact{
+        margin-top: 100px;
+    }
+</style>
+  <!--contact-->
+<div class="contact" data-aos="fade-down">
+    <div class="" style="text-align: center;" id="contact" >
+        <h2><b>Contact Us</b></h2><hr>
+    </div>
+  <div class="container" data-aos="fade-down">
+    <div class="row">
+        <div class="col-lg-8" >
+            <div class="card bg-light">
+                <div class="card-header bg-primary text-white"><i class="fa fa-envelope"></i> Contact us.
+                </div>
+                <div class="card-body">
+                    <form id="contact-form" method="POST" action="{% url 'send_email' %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="name" placeholder="Enter name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Enter email" required>
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" class="form-control" id="subject" aria-describedby="emailHelp" name="subject" placeholder="Enter subject"> 
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <div class="mx-auto">
+                        <button type="submit" class="btn btn-primary text-right">Submit</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-4">
+            <div class="card bg-light mb-3">
+                <div class="card-header bg-success text-white text-uppercase"><i class="fa fa-home"></i> Address</div>
+                <div class="card-body">
+                    <p>Birendranagar-Surkhet</p>
+                    <p>Nepal</p>
+                    <p>Email: email@example.com</p>
+                    <p>Tel. xxxxxxxxxx</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!--end of contact-->
+
+{% endblock content %}

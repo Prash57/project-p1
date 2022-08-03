@@ -1,0 +1,6 @@
+pip install "django>=3.2,<3.3" 
+pip install pillow    
+pip install whitenoise 
+pip install django-ckeditor
+pip install --upgrade pip  
+pip install django-filter

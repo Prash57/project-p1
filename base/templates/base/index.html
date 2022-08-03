@@ -1,0 +1,271 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
+        data-aos="fade-up">
+        <div>
+          <h1>Searching for Blogs</h1>
+          <h2>Don't worry, We got you...</h2>
+        </div>
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-down">
+        <img src=" {% static 'images/hero-img.png' %} " class="img-fluid" alt="">
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- End Hero -->
+
+
+<!-- ======= About Section ======= -->
+<main id="">
+  <section id="about" class="about">
+    <div class="container">
+      <h3 style="text-align: center;" data-aos="fade-down" class="titlehead">About Us</h3>
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-up">
+          <img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="" height="450px">
+        </div>
+        <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
+          <div class="content pt-4 pt-lg-0">
+            <h3></h3>
+            <p class="font-italic">
+              Here at Verve Tech we offer you the best IT service in our province !!!
+            </p>
+            <ul>
+              <li><i class=""></i> We are a group of analytical individuals with a great passion in software development
+                and programming, aiming higher to be successful as an leading Tech-Company of this province.</li>
+              <li><i class=""></i> </li>
+              <li><i class=""></i> </li>
+            </ul>
+            <p>
+
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+<br><br>
+<!-- End About Section -->
+
+<!-- ======= slogan Section ======= -->
+<section id="cta" class="cta">
+  <div class="container">
+
+    <div class="row" data-aos="zoom-in">
+      <div class="col-lg-12 text-center text-lg-left">
+        <h3 style="text-align: center;">Our Slogan</h3>
+        <h2 style="text-align: center;">"An Initiation For Digital Karnali"</h2>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End slogan Section -->
+
+<!-- ======= Features Section ======= -->
+<section id="features" class="features">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-6 mt-2 mb-tg-0 order-2 order-lg-1">
+        <ul class="nav nav-tabs flex-column">
+          <li class="nav-item" data-aos="fade-up">
+            <a class="nav-link active show" data-toggle="tab" href="#tab-1">
+              <h4>Business Analysis</h4>
+              <p>We help in changing organizational context, by defining needs and recommending solutions that deliver
+                value to stakeholders.</p>
+            </a>
+          </li>
+          <li class="nav-item mt-2" data-aos="fade-up" data-aos-delay="100">
+            <a class="nav-link" data-toggle="tab" href="#tab-2">
+              <h4>Startup Voluntering</h4>
+              <p>We provide voluntering services and idea refinment to new startups.</p>
+            </a>
+          </li>
+          <li class="nav-item mt-2" data-aos="fade-up" data-aos-delay="200">
+            <a class="nav-link" data-toggle="tab" href="#tab-3">
+              <h4>Digital Marketing</h4>
+              <p>As the current era is more of digitaliztion, so we help you to transform your business get online.</p>
+            </a>
+          </li>
+          <li class="nav-item mt-2" data-aos="fade-up" data-aos-delay="300">
+            <a class="nav-link" data-toggle="tab" href="#tab-4">
+              <h4>Internship</h4>
+              <p>We provide internship opportunity to the newbies in tech fields to enhance their skills and get some
+                experince.
+
+              </p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in">
+        <div class="tab-content">
+          <div class="tab-pane active show" id="tab-1">
+            <figure>
+              <img src="{% static 'images/features-1.png' %}" alt="" class="img-fluid">
+            </figure>
+          </div>
+          <div class="tab-pane" id="tab-2">
+            <figure>
+              <img src="{% static 'images/features-2.png' %}" alt="" class="img-fluid">
+            </figure>
+          </div>
+          <div class="tab-pane" id="tab-3">
+            <figure>
+              <img src="{% static 'images/features-3.png' %}" alt="" class="img-fluid">
+            </figure>
+          </div>
+          <div class="tab-pane" id="tab-4">
+            <figure>
+              <img src="{% static 'images/features-4.png' %}" alt="" class="img-fluid">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End Features Section -->
+
+<!-- ======= Services Section ======= -->
+<section id="services" class="services section-bg">
+  <div class="container">
+
+    <div class="section-title" data-aos="fade-up">
+      <h2>Services</h2>
+      <p>Here at Verve Tech we provide you the following services</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
+        <div class="icon-box icon-box-pink">
+          <div class="icon"><i class="fas fa-code"></i></div>
+          <h4 class="title"><a href="">Web Development</a></h4>
+          <p class="description">We craft beautiful websites (both static and dynamic) with full responsiveness.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-box icon-box-red">
+          <div class="icon"><i class="fas fa-window-maximize"></i></div>
+          <h4 class="title"><a href="">Software Development</a></h4>
+          <p class="description">We build softwares having uptodated features with smooth UI experience for user</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+        <div class="icon-box icon-box-green">
+          <div class="icon"><i class="fas fa-server"></i></div>
+          <h4 class="title"><a href="">Web Hosting</a></h4>
+          <p class="description">We also provide hosting services with affordable plans and domain registration</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
+        <div class="icon-box icon-box-blue">
+          <div class="icon"><i class="fas fa-laptop-code"></i></div>
+          <h4 class="title"><a href="">Technical Services</a></h4>
+          <p class="description">We provide technical support to any IT/Tech related business or companies as per their
+            need</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End Services Section -->
+
+
+<!-- ======= slogan Section ======= -->
+<section id="cta" class="cta">
+  <div class="container">
+
+    <div class="row" data-aos="zoom-in">
+      <div class="col-lg-12 text-center text-lg-left">
+        <h2 style="text-align: center;">"Impact of Good Creation Lasts Forever"</h2>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End slogan Section -->
+
+<!--Portfolio Section-->
+
+
+<!-- End of Portfolio Section-->
+
+
+
+<!--contact-->
+<div class="contact" data-aos="fade-down">
+  <div class="" style="text-align: center;" id="contact">
+    <h2><b>Contact Us</b></h2>
+    <hr>
+  </div>
+  <div class="container" data-aos="fade-down">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="card bg-light">
+          <div class="card-header bg-primary text-white"><i class="fa fa-envelope"></i> Contact us.
+          </div>
+          <div class="card-body">
+            <form id="contact-form" method="POST" action="">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="name"
+                  placeholder="Enter name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email"
+                  placeholder="Enter email" required>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                  else.</small>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" class="form-control" id="subject" aria-describedby="emailHelp" name="subject"
+                  placeholder="Enter subject">
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
+              </div>
+              <div class="mx-auto">
+                <button type="submit" class="btn btn-primary text-right">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="card bg-light mb-3">
+          <div class="card-header bg-success text-white text-uppercase"><i class="fa fa-home"></i> Address</div>
+          <div class="card-body">
+            <p>Birendranagar-Surkhet</p>
+            <p>Nepal</p>
+            <p>Email: email@example.com</p>
+            <p>Tel. xxxxxxxxxx</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end of contact-->
+
+  {% endblock content %}

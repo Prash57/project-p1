@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--aos-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!--fontawesome-->
+  <link href="{% static 'fontawesome-free-5.15.1-web/css/all.css' %} " rel="stylesheet">
+  <!--Custom CSS-->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+
+  <title>prashant</title>
+</head>
+
+<body>
+
+  <!-- NAVBAR-->
+  <div>
+    <nav class="navbar navbar-expand-lg py-3 navbar-dark fixed-top bg-dark shadow-sm">
+      <div class="container">
+        <a href="{% url 'posts' %}" class="navbar-brand"><!--posts, home-->
+          <!-- Logo Image -->
+          <img src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" width="45" alt=""
+            class="d-inline-block align-middle mr-2">
+          <!-- Logo Text -->
+          <span class="text-uppercase font-weight-bold">Blog <span style="color: orange;">Site</span></span>
+        </a>
+
+        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+          class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+
+        <div id="navbarSupportedContent" class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+            {% with url_name=request.resolver_match.url_name %}
+            <!-- <li class="nav-item {% if url_name == 'home' %}active{% endif %}"><a href="{% url 'posts' %}"
+                class="nav-link">Home</a></li> -->
+            <li class="nav-item {% if url_name == 'gallery' %}active{% endif %}"><a href="{% url 'gallery' %}"
+                class="nav-link">Gallery</a></li>
+            <!-- <li class="nav-item {% if url_name == 'posts' %}active{% endif %}"><a href="{% url 'posts' %}"
+                class="nav-link">Blogs</a></li> -->
+            <li class="nav-item {% if url_name == 'contact' %}active{% endif %}"><a href="{% url 'contact' %}"
+                class="nav-link">Contact</a></li>
+
+            {% if request.user.is_authenticated %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <b>Hello, {{request.user}}</b>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item {% if url_name == 'add_tags' %}active{% endif %}"
+                  href="{% url 'add_tags' %}">Add Tags</a>
+                <a class="dropdown-item {% if url_name == 'add_image' %}active{% endif %}"
+                  href="{% url 'add_image' %}">Add Image</a>
+                <a class="dropdown-item {% if url_name == 'register' %}active{% endif %}"
+                  href="{% url 'register' %}">Register</a>
+                <a class="dropdown-item {% if url_name == 'create_post' %}active{% endif %}"
+                  href="{% url 'create_post' %}">Create Post</a>
+                <a class="dropdown-item {% if url_name == 'logout' %}active{% endif %}"
+                  href="{% url 'logout' %}">Logout</a>
+              </div>
+            </li>
+            {% else %}
+            <li class="nav-item {% if url_name == 'login' %}active{% endif %}"><a href="{% url 'login' %}"
+                class="nav-link">Login</a></li>
+            {% endif %}
+            {% endwith %}
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!--end of navbar-->
+
+
+  {% block content %}
+  <!-- Content goes here -->
+  {% endblock content %}
+
+
+  <!--Social Links-->
+  <div class="sociallinks" data-aos="#">
+    <h3>Follow Us</h3>
+    <div class="links" id="flex-gap">
+      <a href=""><i class="fab fa-twitter fa-3x"></i></a>
+      <a href=""><i class="fab fa-facebook fa-3x"></i></a>
+      <a href=""><i class="fab fa-instagram fa-3x"></i></a>
+      <a href=""><i class="fab fa-linkedin fa-3x"></i></a>
+    </div>
+    <hr>
+    <div class="copyright">
+      &copy; Copyright <strong><span>VERVE TECH</span></strong>. All Rights Reserved
+    </div>
+  </div>
+  <!--End of Social Links-->
+
+</body>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    offset: 200,
+    duration: 1000,
+  });
+</script>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</html>

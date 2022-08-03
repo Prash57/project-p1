@@ -1,0 +1,28 @@
+{% extends 'base/main.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<style>
+    .title{
+        text-align: center;
+        margin-top: 100px;
+    }
+</style>
+<div class="container">
+    <h3 class="title"><b>Add/Edit Post</b></h3>
+    <div class="row">
+       
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.media}}
+        {{ form| crispy}}
+        <input class="btn btn-primary" type="submit" value="Submit Post" style="float: right;">
+    
+    </form>
+    </div>
+</div>
+
+
+{% endblock content %}

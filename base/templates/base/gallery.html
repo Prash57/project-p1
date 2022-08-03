@@ -1,0 +1,64 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+    .head{
+        margin-top: 100px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+</style>
+
+
+<h2 class="head">Gallery</h2>
+
+<div class="container">
+    <div class="row">
+     {% for images in img %}
+      <div class="col-sm-4">
+       <div class="card m-2">
+           <a href="{{images.photo.url}}"><img src="{{images.photo.url}}" alt="" class="card-img-top" height="200px"></a>
+       </div>
+      </div>
+     {% endfor %}
+    </div>
+
+    <footer style="margin-top:20px ;">
+        <div class="row">
+            
+            {% if img.has_other_pages %}
+ 
+                <div style="margin: auto;">
+                    <ul class="pagination">
+ 
+                        {% if img.has_previous %}
+                            <li class="page-item"><a data-page="{{img.previous_page_number}}" href="?page={{img.previous_page_number}}" class="page-link">&laquo</a></li>
+    
+                            <li class="page-item"><a data-page="1" href="?page=1" class="page-link">First</a></li>
+                        {% endif %}
+    
+                        {% for i in img.paginator.page_range %}
+                            {% if img.number == i %}
+                                <li class="page-item"><a class="active page-link">{{i}}</a></li>
+                            {% else %}
+                                <li class="page-item"><a data-page="{{i}}" href="?page={{i}}" class="page-link">{{i}}</a></li>
+                            {% endif %}
+                            
+                        {% endfor %}
+    
+                        {% if img.has_next %}
+                            <li class="page-item"><a data-page="{{img.paginator.num_pages}}" href="?page={{img.paginator.num_pages}}" class="page-link">Last</a></li>
+    
+                            <li class="page-item"><a data-page="{{img.next_page_number}}" href="?page={{img.next_page_number}}" class="page-link">&raquo</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+   </footer>
+
+   </div>
+  
+{% endblock content %}

@@ -1,0 +1,96 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+  .head,
+  .col-md-4 {
+    margin-top: 100px;
+  }
+</style>
+<!-- Page Content -->
+<div class="container">
+
+  <div class="row">
+
+    <!-- Post Content Column -->
+    <div class="col-lg-8">
+
+      <!-- Title -->
+      <div class="head">
+        <h1 class="mt-4">{{ post.headline }}</h1>
+      </div>
+
+      <hr>
+      {% if post.sub_headline %}
+      {{ post.sub_headline }}
+      {% endif %}
+      <hr>
+
+      <!-- Preview Image -->
+      <img class="img-fluid rounded" src="{{post.thumbnail.url}}" alt="" height="300" width="500">
+
+      <hr>
+
+      <!-- Post Content -->
+      <p class="lead">{{ post.body|safe }}</p>
+
+      <br>
+      <a href="{% url 'posts' %}" class="btn btn-primary">&larr; Back</a>
+
+      <hr>
+      <br>
+
+      <div class="main-comment-section">
+        {{ comments.count }} Comment{{ comments|pluralize }}
+        {% for comment in comments %}
+        <blockquote class="blockquote">
+          <p class="mb-0">{{ comment.body }}</p>
+          <footer class="blockquote-footer">By <cite title="Source Title">{{ comment.name|capfirst}}</cite></footer>
+        </blockquote>
+
+        {% endfor %}
+
+      </div>
+
+
+      <!-- Comments Form -->
+      <div class="card my-4">
+        <h5 class="card-header">Leave a Comment:</h5>
+        <div class="card-body">
+          <form method="POST">
+            {% csrf_token %}
+            {{ comment_form|crispy }}
+
+            <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar Widgets Column -->
+
+    <div class="col-md-4">
+      <!-- Side Widget -->
+      <div class="card my-4">
+        <h5 class="card-header">About Author</h5>
+        <div class="card-body">
+          <p class="lead">Posted by: {{post.user|capfirst}}</p>
+          <p class="lead">Posted on {{post.created}}</p>
+          {% if user.is_authenticated %}
+          <p class="lead">Author, Do you want to : </p>
+          <a href="{% url 'update_post' post.slug %}">Edit</a>
+          | <a href="{% url 'delete_post' post.slug %}">Delete</a>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+{% endblock %}
